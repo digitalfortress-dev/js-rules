@@ -6,65 +6,82 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
+    'next/core-web-vitals',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
+    'prettier',
+    'plugin:tailwindcss/recommended',
   ],
-  plugins: ["react", "react-hooks", "@typescript-eslint", "import"],
-  parser: "@typescript-eslint/parser",
+  plugins: [
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'import',
+    'prettier',
+    'tailwindcss',
+  ],
+  parser: '@typescript-eslint/parser',
   rules: {
     // configs eslint import
-    "import/default": "error",
-    "import/export": "error",
-    "import/named": "error",
-    "import/namespace": "error",
-    "import/no-absolute-path": "error",
-    "import/no-cycle": "error",
-    "import/no-unused-modules": "error",
-    "import/no-unresolved": "error",
-    "import/order": [
-      "error",
+    'import/default': 'error',
+    'import/export': 'error',
+    'import/named': 'error',
+    'import/namespace': 'error',
+    'import/no-absolute-path': 'error',
+    'import/no-cycle': 'error',
+    'import/no-unused-modules': 'error',
+    'import/no-unresolved': 'error',
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
         ],
-        alphabetize: { order: "asc", caseInsensitive: true },
+        alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
     // configs eslint react
-    "react/jsx-indent": ["error", 2],
-    "react/jsx-filename-extension": [
+    'react/jsx-indent': ['error', 2],
+    'react/jsx-filename-extension': [
       1,
-      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
-    "react/prop-types": "off",
+    'prettier/prettier': 'error',
+    'react/prop-types': 'off',
     // configs eslint react-hooks
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     // configs eslint undef and console
-    "no-undef": "error",
-    "no-console": "error",
+    'no-undef': 'error',
+    'no-console': 'error',
+    // configs eslint tailwind
+    'tailwindcss/classnames-order': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
   },
   settings: {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    "import/resolver": {
+    'import/resolver': {
       typescript: {},
     },
     react: {
-      version: "detect",
+      version: 'detect',
+    },
+    tailwindcss: {
+      config: './tailwind.config.js',
     },
   },
-}
+};
