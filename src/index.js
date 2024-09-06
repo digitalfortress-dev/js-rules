@@ -1,3 +1,4 @@
 const eslint = require('./eslint');
+const prettier = require('./prettier');
 
-module.exports = { eslint };
+module.exports = { eslint, prettier };
